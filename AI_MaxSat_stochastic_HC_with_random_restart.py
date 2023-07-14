@@ -55,7 +55,6 @@ def main():
     temp_list = []
     temp_val = []
     file = open("Max-Sat_20_80.txt", "r")
-
     c = file.read()
     c = c.replace("\n", " ")
     # print(c[0])
@@ -78,7 +77,12 @@ def main():
     temp_val.clear()
     val_list.clear()
     global_max=0
-    for k in range(200): #random restart
+
+    #get number of random restarts
+    print("enter number of random restarts:")
+    num_random_restart=int(input())
+
+    for k in range(num_random_restart): #random restart
         for i in range(int(NumberOfVar)):
             variables_dict[i + 1] = {randint(0, 1)}  #giving random values to variables
         copy_variables_dict = variables_dict     #copying the values
@@ -147,7 +151,7 @@ def main():
         final_dict_with_random_restart=variables_dict
         # print(bestFitness)
         # print(final_dict)
-    print(global_max)
+    print(f'global_max={global_max}')
     print(variables_dict)
 
 

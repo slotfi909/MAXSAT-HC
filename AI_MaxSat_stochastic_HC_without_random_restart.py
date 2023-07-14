@@ -54,7 +54,11 @@ def main():
     final_dict_res = {}
     temp_list = []
     temp_val = []
-    file = open("Max-Sat_5_11.txt", "r")
+    file = open("Max-Sat_20_80.txt", "r")
+    # file = open("Max-Sat_3_7.txt", "r")
+    # file = open("Max-Sat_2_3.txt", "r")
+    # file = open("Max-Sat_5_6.txt", "r")
+    # file = open("Max-Sat_5_11.txt", "r")
 
     c = file.read()
     c = c.replace("\n", " ")
@@ -98,7 +102,7 @@ def main():
     currentFitness=fitness(Mylist,val_list)
     print(f"first fitness={currentFitness}")
     bestFitness=0
-    for i2 in range(10000):
+    for i2 in range(10000): 
         sumOfFitnesses=0
         listOfFitnessOfNeighbors = []
         for i in range(int(NumberOfVar)):
@@ -140,7 +144,7 @@ def main():
         variables_dict=temp_variables_dict
         val_list=variablesDictToValList(Mylist,variables_dict)
 
-    print(bestFitness)
+    print(f'bestFitness={bestFitness}')
     print(final_dict)
 
 
